@@ -89,7 +89,7 @@ final class SearchPresenter: SearchPresenterProtocol {
                 }
                 view?.showSearchResult()
             } catch {
-                view?.showError(error: error.localizedDescription)
+                view?.showError(error: "Ой! Что-то пошло не так")
             }
         }
     }
@@ -105,7 +105,7 @@ final class SearchPresenter: SearchPresenterProtocol {
                 let image = try await imageService.fetchImage(url: url)
                 competionHandler(image)
             } catch {
-                view?.showError(error: "Something went wrong!")
+                view?.showError(error: "Ой! Что-то пошло не так")
             }
         }
     }
